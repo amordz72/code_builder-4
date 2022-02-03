@@ -36,7 +36,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="{{ route('post_tw') }}">post All tw</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +49,7 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li>
-            
+
             </ul>
 
           </div>
