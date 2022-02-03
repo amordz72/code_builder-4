@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/post', App\Http\Livewire\Test\Post\Index::class);
+Route::get('/post', App\Http\Livewire\Test\Bs\Post\All::class);
 
 Route::get('/', function () {
     return view('welcome');

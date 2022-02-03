@@ -29,7 +29,7 @@
 
 
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                           
+
                                 <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                     {{ $post->id }}
                                 </td>
@@ -43,7 +43,7 @@
                                     <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                 </td>
                             </tr>
-   @endforeach
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -54,8 +54,8 @@
 
 
 
-<div class="row">
-    {{ $posts->links() }}
-</div>
+    <div class="row">
+        {{ $posts->links() }}
+    </div>
 
 </div>
