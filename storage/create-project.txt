@@ -1,0 +1,35 @@
+composer create-project laravel/laravel code_builder-4
+cd code_builder-4
+
+
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+
+npm install
+npm run dev
+php artisan migrate
+
+php artisan vendor:publish --tag=jetstream-views
+php artisan livewire:publish --config
+php artisan livewire:publish --assets
+
+#composer.json
+
+# Compile your CSS / JavaScript for development...
+npm run dev
+
+# Compile your CSS / JavaScript for production...
+npm run prod
+
+# Compile your CSS / JavaScript for development and recompile on change...
+npm run watch
+
+APP_URL=http://localhost/code_builder-4/public
+
+ // 'asset_url' => null,
+    'asset_url' => env('APP_URL', null),
+
+
+
+
+===========
