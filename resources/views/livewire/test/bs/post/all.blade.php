@@ -1,10 +1,9 @@
 <div>
-    <table class="table table-hover table-responsive mt-3">
-        {{-- <thead class="table-dark"> --}}
+    <table class="table table-hover table-responsive mt-3 text-center">
         <thead class="" style="background: rgb(226, 117, 117)">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">title</th>
+                <th scope="col">Title</th>
                 <th scope="col">Body</th>
 
             </tr>

@@ -24,37 +24,135 @@
   <body>
 <div class="container-fluid mt-2">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('post_tw') }}">post All tw</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+     <nav class="navbar navbar-expand-lg   navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        {{-- All links--}}
 
-            </ul>
+                        <!--start dropdown links Make -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Make
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('code.make.index') }}">Make All</a></li>
+                                <li><a class="dropdown-item" href="{{ route('code.make.create') }}">Make Create</a></li>
+                                <li><a class="dropdown-item" href="{{ route('code.make.edit') }}">Make Edit</a></li>
+                                <li><a class="dropdown-item" href="{{ route('code.make.show') }}">Make Show</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                {{-- Create Link--}}
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('code.form.create') }}">
+                                        {{ __('Create Form') }}</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('code.strapi.create') }}">Strapi Create</a></li>@
+                            </ul>
+                        </li>
+                        <!--end dropdown links Make -->
+                        {{-- All links--}}
 
-          </div>
-        </div>
-      </nav>
+                        <!--start dropdown links Project -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Project
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('code.project.index') }}">Project All</a></li>
+                                <li><a class="dropdown-item" href="{{ route('code.project.create') }}">Project Create</a></li>
+                                <li><a class="dropdown-item" href="{{ route('code.project.edit') }}">Project Edit</a></li>
+                                <li><a class="dropdown-item" href="{{ route('code.project.show') }}">Project Show</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <!--end dropdown links Project -->
+
+
+                        {{-- All links--}}
+
+                        <!--start dropdown links Bank -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Bank
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('code.bank.index') }}">Bank All</a></li>
+
+                               {{-- <li><a class="dropdown-item" href="{{ route('backups') }}">Backup</a></li>
+                                 <li><a class="dropdown-item" href="{{ route('code.bank.create') }}">Bank Create</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('code.bank.edit') }}">Bank Edit</a></li>
+                        <li><a class="dropdown-item" href="{{ route('code.bank.show') }}">Bank Show</a></li> --}}
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                    </li>
+                    <!--end dropdown links Bank -->
+
+
+
+
+
+                    </ul>
+                    </li>
+
+                    </ul>
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
+                        @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
 
 @yield('content')

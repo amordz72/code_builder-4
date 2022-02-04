@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/post', App\Http\Livewire\Test\Bs\Post\All::class)->name('post_bs');
+
+
 Route::get('/post_tw', App\Http\Livewire\Test\Post\All::class)->name('post_tw');
+Route::get('/model_post_c', App\Http\Livewire\Test\Post\CreateModel::class)->name('model_post_c');
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,3 +25,6 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+require_once ('code.php') ;
